@@ -23,12 +23,12 @@ end
 config_data["environment"] = environment
 
 # load custom parameters
-if !File.exists?("/var/db/config.yml")
-	raise "Configuration file /var/db/config.yml does not exists.
+if !File.exists?("/opt/db/config.yml")
+	raise "Configuration file /opt/db/config.yml does not exists.
        	It must include the basic information about the node, ex:name and can provide additional information for package version"
 end
 
-config_data.merge(YAML.load_file("/var/db/config.yml").to_hash)
+config_data.merge!(YAML.load_file("/opt/db/config.yml").to_hash)
 
 # write out the yaml for node terminus
 puts "---"
