@@ -12,11 +12,14 @@ nodetype = match_data[1]
 if (nodetype.nil?)
 	raise "Malformed hostname #{host_name}, cannot determine nodetype, hostname of the format <nodetype>-<index>.<datacenter>.jamaav.net is expected"
 end
-config_data["nodeclass"] = nodetype
 
 environment = match_data[2]
 if (environment.nil?)
 	raise "Malformed hostname #{host_name}, cannot determine nodetype, hostname of the format <nodetype>-<index>.<datacenter>.jamaav.net is expected"
 end
 
-res = system("/usr/bin/puppet", "apply", "/etc/puppet/environments/#{environment}/manifests/site.pp", "--environment=#{environment}")
+puts("Executing puppet for node of type #{nodetype} in environment #{environment}");
+
+system("/usr/bin/puppet", "apply", "/etc/puppet/environments/#{environment}/manifests/site.pp", "--environment=#{environment}")
+
+puts("Exit status is #{$?.exitstatus}")
