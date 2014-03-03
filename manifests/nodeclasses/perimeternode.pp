@@ -1,4 +1,4 @@
-class perimeternode {
+class perimeternode extends basenode {
     notify { "Starting puppet execution for Jamaav perimeter nodes": }
 
     # install haproxy on the perimeter nodes
