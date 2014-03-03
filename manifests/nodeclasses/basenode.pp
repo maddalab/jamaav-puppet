@@ -4,5 +4,7 @@
 class basenode {
 	include site
 
-	package { 'rubygems': }
+	package { 'rubygems': 
+		ensure => '1.8.15'
+	}
 }
