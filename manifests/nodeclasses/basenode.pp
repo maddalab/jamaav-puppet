@@ -3,4 +3,6 @@
 # that is required for functioning correctly
 class basenode {
 	include site
+
+	package { 'rubygems': }
 }

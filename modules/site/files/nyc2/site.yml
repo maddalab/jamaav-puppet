@@ -1,3 +1,7 @@
+# Maintain this file manually by hand
+# The node classes can be added as required
+# The IPs for each node class correspond to a node
+# running the node class
 ---
   perimeternode:
     - 107.170.62.27
