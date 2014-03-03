@@ -1,4 +1,6 @@
-class perimeternode extends basenode {
+import "basenode.pp"
+
+class perimeternode inherits basenode {
     notify { "Starting puppet execution for Jamaav perimeter nodes": }
 
     # install haproxy on the perimeter nodes
